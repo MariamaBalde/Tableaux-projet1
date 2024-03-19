@@ -22,17 +22,27 @@ var randomaleatoire = Math.round(Math.random() * (max - min) + min);
 document.querySelector(".btn").addEventListener("click", function (e) {
   e.preventDefault();
   let valuechoix = document.querySelector("#input").value; //Récuperer la valeur que l'utilisateur a saisie
+  // let nbressai ;
+  // for ( nbressai=0; nbressai <= 10; nbressai++) {
+  //   document.querySelector(".essais").innerText = nbressai;
+  // }
 
-  for (let nbressai = 0; nbressai <= 10; nbressai++) {
-    document.querySelector(".essais").innerText = nbressai;
-  }
+  let  nbressai =0;
+  nbressai++;
+  document.querySelector(".essais").innerText = 10 - nbressai;
 
   if (valuechoix < randomaleatoire) {
-    document.querySelector("span.text-danger").innerText =
-      "Non, le nombre est plus grand.";
+    document.querySelector(
+      "span.text-danger"
+    ).innerText = `le nombre deviner est plus grand. et on est au  ${nbressai}  essais`;
   } else if (valuechoix > randomaleatoire) {
+    document.querySelector(
+      "span.text-danger"
+    ).innerText = `le nombre deviner est plus petit. et on est au  ${nbressai}  essais`;
+      // "le nombre deviner est plus petit." + nbressai;
+  } else if (valuechoix == randomaleatoire) {
     document.querySelector("span.text-danger").innerText =
-      "Non, le nombre est plus petit.";
+      "Correct ! Vous avez trouvé en " + nbressai + "essais.";
   } else if (nbressai == 10) {
     document.querySelector(".essais").innerText = 10;
   } else {

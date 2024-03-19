@@ -8,6 +8,13 @@
 // document.querySelector("#input").value = Math.random();
 //  document.querySelector("#input").value = random(10, 100);
 
+// let  nbressai =0;
+// nbressai++;
+// document.querySelector(".essais").innerText = 11 - nbressai;
+// let  nbressai =0;
+// nbressai++;
+// document.querySelector(".essais").innerText = 10 - nbressai;
+
 let max = 100;
 let min = 10;
 var randomaleatoire = Math.round(Math.random() * (max - min) + min);
@@ -16,17 +23,19 @@ document.querySelector(".btn").addEventListener("click", function (e) {
   e.preventDefault();
   let valuechoix = document.querySelector("#input").value; //Récuperer la valeur que l'utilisateur a saisie
 
+  for (let nbressai = 0; nbressai <= 10; nbressai++) {
+    document.querySelector(".essais").innerText = nbressai;
+  }
+
   if (valuechoix < randomaleatoire) {
     document.querySelector("span.text-danger").innerText =
       "Non, le nombre est plus grand.";
   } else if (valuechoix > randomaleatoire) {
     document.querySelector("span.text-danger").innerText =
       "Non, le nombre est plus petit.";
+  } else if (nbressai == 10) {
+    document.querySelector(".essais").innerText = 10;
   } else {
-    console.log("Correct ! Vous avez trouvé");              
+    console.log("Correct ! Vous avez trouvé");
   }
-});               
-
-
-
-
+});

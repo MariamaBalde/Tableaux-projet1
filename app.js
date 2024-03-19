@@ -29,7 +29,7 @@ document.querySelector(".btn").addEventListener("click", function (e) {
 
   let  nbressai =0;
   nbressai++;
-  document.querySelector(".essais").innerText = 10 - nbressai;
+  document.querySelector(".essais").innerText = 11 - nbressai;
 
   if (valuechoix < randomaleatoire) {
     document.querySelector(
